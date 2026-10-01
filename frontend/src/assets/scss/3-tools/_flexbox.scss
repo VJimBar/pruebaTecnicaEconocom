@@ -1,0 +1,12 @@
+// =====================================
+//@include flexbox(column, no-wrap) {
+//    justify-content: space-between;
+//}
+// =====================================
+@mixin flexbox($direction, $wrap) {
+    display: flex;
+    flex-direction: #{$direction};
+    flex-wrap: #{$wrap};
+
+    @content;
+}

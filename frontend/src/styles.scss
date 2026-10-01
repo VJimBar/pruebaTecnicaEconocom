@@ -1,0 +1,44 @@
+/* Global styles following ITCSS architecture */
+/*********************************************/
+@import "assets/scss/4-generic/normalize";
+@import "assets/scss/4-generic/reset";
+/*********************************************/
+
+// 1. Settings (Variables de color, espaciados y fuentes)
+@import "assets/scss/1-settings/variables";
+
+// 3. Tools (Mixins y funciones)
+@import "assets/scss/3-tools/breakpoints";
+@import "assets/scss/3-tools/notouch-hover";
+@import "assets/scss/3-tools/fluid-type";
+@import "assets/scss/3-tools/nth-child";
+
+// 2. Design Tokens (Tipografía Lato, enlaces, títulos)
+@import "assets/scss/2-design-tokens/typography";
+
+// 5. Elements (Estilos base de botones Material)
+@import "assets/scss/5-elements/buttons";
+
+// 6. Skeleton (Layouts base y flexbox)
+@import "assets/scss/6-skeleton/layouts";
+
+// Overrides de Angular Material
+@import "assets/scss/material-overrides";
+
+// 8. Utilities (Clases de espaciado, alineación y anchos)
+@import "assets/scss/8-utilities/modifiers";
+@import "assets/scss/8-utilities/states";
+
+// Ensure Lato is used by default across body and elements
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: $font-stack;
+}
+
+// Ocultar icono nativo de visibilidad de contraseñas de navegadores (Edge / Chromium)
+input::-ms-reveal,
+input::-ms-clear {
+  display: none !important;
+}

@@ -1,0 +1,13 @@
+{
+  "LOGIN": {
+    "TITLE": "Inicia sesión en tu cuenta",
+    "EMAIL": "Correo electrónico",
+    "PASSWORD": "Contraseña",
+    "SUBMIT": "ENTRAR",
+    "OTHER_ACCESS": "Otras formas de acceso:",
+    "SSO": "ENTRAR CON SSO",
+    "NO_ACCOUNT": "¿No tienes cuenta?",
+    "REGISTER": "Regístrate",
+    "LANGUAGE": "IDIOMA"
+  }
+}

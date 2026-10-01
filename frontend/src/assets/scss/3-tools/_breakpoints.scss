@@ -1,0 +1,97 @@
+// =====================================
+// @include for-size(xs-up);
+// @include for-size(sm-up);
+// @include for-size(md-up);
+// @include for-size(lg-up);
+// @include for-size(xs-down);
+// @include for-size(sm-down);
+// @include for-size(md-down);
+// @include for-size(lg-down);
+// @include for-size(xs-to-sm);
+// @include for-size(sm-to-md);
+// @include for-size(md-to-lg);
+// =====================================
+@mixin for-size($range) {
+    $breakpoint-xs: 544px;
+    $breakpoint-sm: 768px;
+    $breakpoint-md: 1200px;
+    $breakpoint-lg: 1440px;
+
+    @if $range==xs-down {
+        @media (max-width: #{$breakpoint-xs - 1}) {
+            @content;
+        }
+    }
+
+    @else if $range==xs-to-sm {
+        @media (min-width: $breakpoint-xs) and (max-width: #{$breakpoint-sm - 1}) {
+            @content;
+        }
+    }
+
+    @else if $range==xs-to-md {
+        @media (min-width: $breakpoint-xs) and (max-width: #{$breakpoint-md - 1}) {
+            @content;
+        }
+    }
+
+    @else if $range==sm-to-md {
+        @media (min-width: $breakpoint-sm) and (max-width: #{$breakpoint-md - 1}) {
+            @content;
+        }
+    }
+
+    @else if $range==md-to-lg {
+        @media (min-width: $breakpoint-md) and (max-width: #{$breakpoint-lg - 1}) {
+            @content;
+        }
+    }
+
+    @else if $range==xs-up {
+        @media (min-width: $breakpoint-xs) {
+            @content;
+        }
+    }
+
+    @else if $range==sm-up {
+        @media (min-width: $breakpoint-sm) {
+            @content;
+        }
+    }
+
+    @else if $range==md-up {
+        @media (min-width: $breakpoint-md) {
+            @content;
+        }
+    }
+
+    @else if $range==lg-up {
+        @media (min-width: $breakpoint-lg) {
+            @content;
+        }
+    }
+
+    @else if $range==xs-down {
+        @media (max-width: #{$breakpoint-xs - 1}) {
+            @content;
+        }
+    }
+
+    @else if $range==sm-down {
+        @media (max-width: #{$breakpoint-sm - 1}) {
+            @content;
+        }
+    }
+
+    @else if $range==md-down {
+        @media (max-width: #{$breakpoint-md - 1}) {
+            @content;
+        }
+    }
+
+    @else if $range==lg-down {
+        @media (max-width: #{$breakpoint-lg - 1}) {
+            @content;
+        }
+    }
+}

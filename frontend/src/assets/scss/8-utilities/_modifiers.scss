@@ -1,0 +1,138 @@
+// This file contains utility classes for margin, padding, flexbox, and other layout properties.
+
+.full-width {
+    width: 100%;
+}
+
+.full-height {
+    height: 100%;
+}
+.no-margin-bottom {
+    margin-bottom: 0;
+}
+.margin-bottom-l {
+    margin-bottom: $spacing-l;
+}
+.margin-top-l {
+    margin-top: $spacing-l;
+}
+
+.margin-top-m {
+    margin-top: $spacing-m;
+}
+
+.margin-bottom-m {
+    margin-bottom: $spacing-m;
+}
+.margin-bottom-s {
+    margin-bottom: $spacing-s;
+}
+
+.margin-left-l {
+    margin-left: $spacing-l;
+}
+
+.margin-left-m {
+    margin-left: $spacing-m;
+}
+
+.margin-left-s {
+    margin-left: $spacing-s;
+}
+
+.margin-left-auto {
+    margin-left: auto;
+}
+
+.margin-right-auto {
+    margin-right: auto;
+}
+
+.text-align-left {
+    text-align: left;
+}
+
+.text-size-m {
+    font-size: $font-m;
+}
+
+.text-size-s {
+    font-size: $font-s;
+}
+
+.text-size-xs {
+    font-size: $font-xs;
+}
+
+.text-align-center {
+    text-align: center;
+}
+
+.margin-right-0 {
+    margin-right: 0 ;
+}
+
+.flex-wrap {
+    flex-wrap: wrap;
+}
+
+.flex-rows {
+    flex-wrap: nowrap;
+    flex-direction: row;
+
+    display: flex;
+
+    &.flex-wrap {
+        flex-wrap: wrap;
+    }
+}
+
+.flex-columns {
+    flex-wrap: nowrap;
+    flex-direction: column;
+
+    display: flex;
+}
+
+.space-between {
+    justify-content: space-between;
+}
+
+.align-left {
+    align-items: flex-start;
+}
+
+.align-items-center {
+    align-items: center;
+}
+.align-center {
+    align-content: center;
+    align-items: center;
+}
+
+.flex-center {
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.flex-grow {
+    flex-grow: 1;
+}
+
+
+.no-gap {
+    gap: 0;
+    grid-gap: none;
+}
+
+.gap-l {
+    gap: $spacing-l;
+}
+.gap-s {
+    gap: $spacing-s;
+}
+
+.gap-m {
+    gap: $spacing-m;
+}

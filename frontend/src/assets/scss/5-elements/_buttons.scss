@@ -1,0 +1,40 @@
+// Buttons
+.mat-flat-button {
+    height: 40px;
+    transition: all .2s ease-in-out;
+
+    background: $neutral-90;
+
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: bold;
+
+    @include notouch-hover {
+        background: darken($neutral-90, 5%);
+    }
+    > mat-icon {
+        margin: 0;
+    }
+    p,
+    span {
+        color: $neutral-10;
+    }
+}
+
+.mat-flat-button.mat-primary {
+    @include set-bg-lighten($primary, $white, 10%);
+
+    p,
+    span {
+        color: $white;
+    }
+}
+
+.mat-flat-button.mat-secondary {
+    @include set-bg-lighten($secondary, $white, 5%);
+
+    p,
+    span {
+        color: $white;
+    }
+}

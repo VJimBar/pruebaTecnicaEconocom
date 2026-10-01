@@ -1,0 +1,62 @@
+@import "../../../assets/scss/1-settings/variables";
+@import "../../../assets/scss/3-tools/breakpoints";
+@import "../../../assets/scss/3-tools/fluid-type";
+
+.main-screen {
+  min-height: 100vh;
+  width: 100%;
+  background-color: #F2F2F2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: $spacing-m;
+  box-sizing: border-box;
+
+  &__card {
+    background-color: $white;
+    border-radius: $border-radius-m;
+    padding: $spacing-xxl $spacing-xl;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+    text-align: center;
+    max-width: 650px;
+    width: 100%;
+    box-sizing: border-box;
+
+    @include for-size(sm-down) {
+      padding: $spacing-xl $spacing-m;
+    }
+  }
+
+  &__title {
+    font-family: $font-stack;
+    font-size: $font-3xl; // El tamaño más grande del sistema de diseño (57px)
+    font-weight: 700;
+    color: #000000;
+    margin: 0;
+    line-height: 1.2;
+
+    @include for-size(sm-down) {
+      font-size: $font-xl;
+    }
+  }
+
+  &__logout-btn {
+    width: 100%;
+    max-width: 360px;
+    height: 44px;
+    margin-top: $spacing-l;
+    border-radius: $border-radius-s;
+    background-color: $primary !important;
+    color: $white !important;
+    font-family: $font-stack;
+    font-size: 13.5px;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    box-shadow: none !important;
+
+    &:hover {
+      background-color: darken($primary, 6%) !important;
+    }
+  }
+}

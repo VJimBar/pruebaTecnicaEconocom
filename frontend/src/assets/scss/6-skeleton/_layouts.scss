@@ -1,0 +1,45 @@
+html {
+    box-sizing: border-box;
+}
+
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+}
+
+.content {
+    display: block;
+    margin-top: $spacing-m;
+    margin-bottom: $spacing-m;
+    border-radius: $spacing-xs;
+    padding: $spacing-m;
+
+    background: $white;
+
+    @include for-size (md-down) {
+        padding: $spacing-s;
+    }
+}
+
+.flex-rows {
+    flex-wrap: nowrap;
+    flex-direction: row;
+
+    display: flex;
+
+    &.flex-wrap {
+        flex-wrap: wrap;
+    }
+}
+
+.flex-columns {
+    flex-wrap: nowrap;
+    flex-direction: column;
+
+    display: flex;
+}

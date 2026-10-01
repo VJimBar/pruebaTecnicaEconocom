@@ -1,0 +1,149 @@
+<div class="login-page">
+  <!-- Columna izquierda: ilustración (2/3 de la pantalla) con fondo #F2F2F2 -->
+  <section class="login-page__illustration-container">
+    <div class="login-page__illustration-wrapper">
+      <img 
+        src="assets/images/login.svg" 
+        alt="Econocom Login Illustration" 
+        class="login-page__illustration"
+      />
+    </div>
+  </section>
+
+  <!-- Columna derecha: formulario centrado con fondo blanco -->
+  <section class="login-page__form-container">
+    <div class="login-page__form-wrapper">
+      
+      <!-- Logotipo Realdooh -->
+      <div class="login-page__logo-header">
+        <img 
+          src="assets/images/logos/Logo-RD.svg" 
+          alt="realdooh" 
+          class="login-page__logo-rd"
+        />
+      </div>
+
+      <!-- Título -->
+      <h2 class="login-page__title">
+        {{ 'LOGIN.TITLE' | translate }}
+      </h2>
+
+      <!-- Mensaje de error del backend -->
+      <div *ngIf="errorMessage" class="login-page__error">
+        {{ errorMessage }}
+      </div>
+
+      <!-- Formulario -->
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="login-page__form">
+        
+        <!-- Campo Correo Electrónico -->
+        <mat-form-field appearance="outline" class="login-page__field">
+          <input 
+            matInput 
+            type="email" 
+            formControlName="email" 
+            [placeholder]="'LOGIN.EMAIL' | translate" 
+            autocomplete="email"
+          />
+          <mat-error *ngIf="loginForm.get('email')?.hasError('required')">
+            El correo electrónico es requerido
+          </mat-error>
+          <mat-error *ngIf="loginForm.get('email')?.hasError('email')">
+            Formato de correo no válido
+          </mat-error>
+        </mat-form-field>
+
+        <!-- Campo Contraseña -->
+        <mat-form-field appearance="outline" class="login-page__field">
+          <input 
+            matInput 
+            [type]="hidePassword ? 'password' : 'text'" 
+            formControlName="password" 
+            [placeholder]="'LOGIN.PASSWORD' | translate"
+            autocomplete="current-password"
+          />
+          <button 
+            type="button" 
+            mat-icon-button 
+            matSuffix 
+            (click)="togglePasswordVisibility()" 
+            aria-label="Toggle password visibility"
+            class="login-page__visibility-btn"
+          >
+            <mat-icon>{{ hidePassword ? 'visibility_off' : 'visibility' }}</mat-icon>
+          </button>
+          <mat-error *ngIf="loginForm.get('password')?.hasError('required')">
+            La contraseña es requerida
+          </mat-error>
+        </mat-form-field>
+
+        <!-- Botón ENTRAR -->
+        <button 
+          mat-flat-button 
+          type="submit" 
+          class="login-page__btn login-page__btn--primary"
+        >
+          {{ 'LOGIN.SUBMIT' | translate }}
+        </button>
+
+        <!-- Separador Otras formas de acceso -->
+        <p class="login-page__other-access">
+          {{ 'LOGIN.OTHER_ACCESS' | translate }}
+        </p>
+
+        <!-- Botón ENTRAR CON SSO -->
+        <button 
+          mat-flat-button 
+          type="button" 
+          (click)="onSsoLogin()"
+          class="login-page__btn login-page__btn--sso"
+        >
+          {{ 'LOGIN.SSO' | translate }}
+        </button>
+
+        <!-- Texto Registro -->
+        <div class="login-page__register">
+          <span>{{ 'LOGIN.NO_ACCOUNT' | translate }} </span>
+          <a routerLink="/register" class="login-page__register-link">
+            {{ 'LOGIN.REGISTER' | translate }}
+          </a>
+        </div>
+      </form>
+    </div>
+
+    <!-- Pie de página de la columna derecha -->
+    <footer class="login-page__footer">
+      <div 
+        class="login-page__lang-selector" 
+        [matMenuTriggerFor]="langMenu"
+        role="button"
+        tabindex="0"
+      >
+        <mat-icon class="login-page__lang-icon">language</mat-icon>
+        <span class="login-page__lang-text">
+          {{ 'LOGIN.LANGUAGE' | translate }}: {{ translationService.currentLanguage }}
+        </span>
+        <mat-icon class="login-page__lang-arrow">keyboard_arrow_down</mat-icon>
+      </div>
+
+      <mat-menu #langMenu="matMenu" class="login-page__lang-menu">
+        <button 
+          mat-menu-item 
+          *ngFor="let lang of languages" 
+          (click)="changeLanguage(lang.code)"
+          [class.is-selected]="translationService.currentLanguage === lang.code"
+        >
+          <span>{{ lang.label }} ({{ lang.code }})</span>
+        </button>
+      </mat-menu>
+
+      <div class="login-page__econocom-logo-wrapper">
+        <img 
+          src="assets/images/logos/Econocom.svg" 
+          alt="econocom Products & Solutions" 
+          class="login-page__econocom-logo"
+        />
+      </div>
+    </footer>
+  </section>
+</div>

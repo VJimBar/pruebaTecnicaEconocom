@@ -1,0 +1,35 @@
+@mixin notouch-hover {
+    @media (any-hover: hover) {
+        &:hover {
+            @content;
+        }
+    }
+}
+
+@mixin touch-styles {
+    @media (hover: none) and (pointer: coarse) {
+        @content;
+    }
+}
+
+@mixin set-bg-lighten($bg, $color, $value) {
+    background: $bg;
+    color: $color;
+
+    @media (any-hover: hover) {
+        &:hover {
+            background: lighten($bg, $value);
+        }
+    }
+}
+
+@mixin set-bg-darken($bg, $color, $value) {
+    background: $bg;
+    color: $color;
+
+    @media (any-hover: hover) {
+        &:hover {
+            background: darken($bg, $value);
+        }
+    }
+}

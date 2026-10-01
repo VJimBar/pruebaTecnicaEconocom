@@ -1,0 +1,13 @@
+{
+  "LOGIN": {
+    "TITLE": "Sign in to your account",
+    "EMAIL": "Email",
+    "PASSWORD": "Password",
+    "SUBMIT": "SIGN IN",
+    "OTHER_ACCESS": "Other ways to sign in:",
+    "SSO": "SIGN IN WITH SSO",
+    "NO_ACCOUNT": "Don't have an account?",
+    "REGISTER": "Sign up",
+    "LANGUAGE": "LANGUAGE"
+  }
+}

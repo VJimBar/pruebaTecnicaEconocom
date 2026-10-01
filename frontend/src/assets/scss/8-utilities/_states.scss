@@ -1,0 +1,16 @@
+
+// States
+.is-disabled {
+    opacity: .7;
+
+    > * {
+        cursor: not-allowed !important;
+    }
+}
+
+.is-visible {
+    display: block;
+}
+.is-hidden {
+    display: none;
+}

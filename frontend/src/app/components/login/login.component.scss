@@ -1,0 +1,284 @@
+@import "../../../assets/scss/1-settings/variables";
+@import "../../../assets/scss/3-tools/breakpoints";
+
+.login-page {
+  display: flex;
+  min-height: 100vh;
+  width: 100%;
+  background-color: $white;
+  font-family: $font-stack;
+
+  @include for-size(sm-down) {
+    flex-direction: column;
+    min-height: 100%;
+  }
+
+  // 1. Columna izquierda / Superior en móvil: Ilustración con fondo #F2F2F2
+  &__illustration-container {
+    flex: 0 0 66.6666%;
+    width: 66.6666%;
+    background-color: #F2F2F2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: $spacing-xl;
+    box-sizing: border-box;
+
+    @include for-size(lg-down) {
+      flex: 0 0 55%;
+      width: 55%;
+      padding: $spacing-m;
+    }
+
+    @include for-size(sm-down) {
+      flex: 0 0 auto;
+      width: 100%;
+      padding: $spacing-l $spacing-m;
+    }
+  }
+
+  &__illustration-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+  }
+
+  &__illustration {
+    max-width: 90%;
+    max-height: 80vh;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    user-select: none;
+
+    @include for-size(sm-down) {
+      max-height: 240px;
+      max-width: 85%;
+    }
+  }
+
+  // 2. Columna derecha / Inferior en móvil: Formulario centrado con fondo blanco
+  &__form-container {
+    flex: 1;
+    min-width: 320px;
+    background-color: $white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: $spacing-xl $spacing-l $spacing-m;
+    box-sizing: border-box;
+
+    @include for-size(sm-down) {
+      width: 100%;
+      padding: $spacing-l $spacing-m $spacing-m;
+    }
+  }
+
+  &__form-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    width: 100%;
+    max-width: 360px;
+    margin: 0 auto;
+  }
+
+  // Logo RD
+  &__logo-header {
+    margin-bottom: $spacing-l;
+    display: flex;
+    justify-content: center;
+  }
+
+  &__logo-rd {
+    height: 48px;
+    width: auto;
+    display: block;
+  }
+
+  // Título
+  &__title {
+    font-size: 1.15rem;
+    font-weight: 500;
+    color: $neutral-20;
+    margin: 0 0 $spacing-l 0;
+    text-align: center;
+  }
+
+  // Formulario
+  &__form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  // Inputs
+  &__field {
+    width: 100%;
+    margin-bottom: $spacing-xs;
+
+    ::ng-deep {
+      .mat-mdc-text-field-wrapper {
+        background-color: $white;
+      }
+      .mat-mdc-form-field-flex {
+        height: 46px;
+        align-items: center;
+      }
+      .mat-mdc-form-field-infix {
+        padding-top: 10px !important;
+        padding-bottom: 10px !important;
+        min-height: 46px !important;
+      }
+      .mdc-notched-outline__leading,
+      .mdc-notched-outline__notch,
+      .mdc-notched-outline__trailing {
+        border-color: $neutral-80 !important;
+      }
+      .mat-mdc-form-field.mat-focused .mdc-notched-outline__leading,
+      .mat-mdc-form-field.mat-focused .mdc-notched-outline__notch,
+      .mat-mdc-form-field.mat-focused .mdc-notched-outline__trailing {
+        border-color: $primary !important;
+      }
+
+      input::-ms-reveal,
+      input::-ms-clear {
+        display: none !important;
+      }
+    }
+  }
+
+  &__visibility-btn {
+    color: $neutral-50;
+    transform: scale(0.9);
+  }
+
+  // Botones
+  &__btn {
+    width: 100%;
+    height: 44px;
+    border-radius: $border-radius-s;
+    font-weight: 700;
+    font-size: 13.5px;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: none !important;
+
+    &--primary {
+      background-color: $primary !important;
+      color: $white !important;
+      margin-top: $spacing-xs;
+
+      &:hover {
+        background-color: darken($primary, 6%) !important;
+      }
+    }
+
+    &--sso {
+      background-color: $secondary !important;
+      color: $white !important;
+
+      &:hover {
+        background-color: darken($secondary, 6%) !important;
+      }
+    }
+  }
+
+  // Texto "Otras formas de acceso:"
+  &__other-access {
+    font-size: 13px;
+    color: $neutral-30;
+    text-align: center;
+    margin: $spacing-m 0 $spacing-s 0;
+  }
+
+  // Texto "¿No tienes cuenta? Regístrate"
+  &__register {
+    text-align: center;
+    font-size: 13.5px;
+    color: $neutral-10;
+    margin-top: $spacing-l;
+  }
+
+  &__register-link {
+    color: $primary;
+    text-decoration: underline;
+    font-weight: 600;
+    margin-left: 4px;
+    cursor: pointer;
+
+    &:hover {
+      color: darken($primary, 10%);
+    }
+  }
+
+  // Pie de la columna derecha
+  &__footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding-top: $spacing-m;
+    border-top: 1px solid transparent;
+  }
+
+  // Selector de idioma
+  &__lang-selector {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    cursor: pointer;
+    user-select: none;
+    padding: $spacing-xs $spacing-s;
+    border-radius: $border-radius-s;
+    transition: background-color 0.2s ease;
+
+    &:hover {
+      background-color: $neutral-95;
+    }
+  }
+
+  &__lang-icon {
+    font-size: 18px;
+    width: 18px;
+    height: 18px;
+    color: $neutral-40;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__lang-text {
+    font-size: 12.5px;
+    font-weight: 600;
+    color: $neutral-40;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+  }
+
+  &__lang-arrow {
+    font-size: 18px;
+    width: 18px;
+    height: 18px;
+    color: $neutral-40;
+  }
+
+  // Logo Econocom
+  &__econocom-logo-wrapper {
+    display: flex;
+    align-items: center;
+  }
+
+  &__econocom-logo {
+    height: 32px;
+    width: auto;
+    display: block;
+  }
+}

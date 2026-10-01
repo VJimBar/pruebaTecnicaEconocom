@@ -1,0 +1,69 @@
+@use '@angular/material' as mat;
+@include mat.core();
+$my-primary: (
+  100 : #FFE0CC,
+  200 : #FFC199,
+  300 : #FFA366,
+  400 : #FF8533,
+  500 : #FF6C00,
+  600 : #CC5600,
+  700 : #994000,
+  800 : #662B00,
+  900 : #331500,
+  A100 : #FFB380,
+  A200 : #FF9955,
+  A400 : #FF8029,
+  A700 : #FF6600,
+  contrast: (50 : #000,
+    100 : #000,
+    200 : #000,
+    300 : #000,
+    400 : #000,
+    500 : #fff,
+    600 : #fff,
+    700 : #fff,
+    800 : #fff,
+    900 : #fff,
+    A100 : #000,
+    A200 : #000,
+    A400 : #fff,
+    A700 : #fff,
+  )
+);
+/* For use in src/lib/core/theming/_palette.scss */
+$my-secondary: (
+  50: #EAF4F5,
+  100: #CCE4E7,
+  200: #99C9CF,
+  300: #66AEB7,
+  400: #33939F,
+  500: #16697A,
+  600: #125562,
+  700: #0E414A,
+  800: #0A2D32,
+  900: #05181A,
+  A100: #66C2D0,
+  A200: #33A7B8,
+  A400: #008CA0,
+  A700: #006F80,
+  contrast: (50: #000,
+    100: #000,
+    200: #000,
+    300: #000,
+    400: #fff,
+    500: #fff,
+    600: #fff,
+    700: #fff,
+    800: #fff,
+    900: #fff,
+    A100: #000,
+    A200: #fff,
+    A400: #fff,
+    A700: #fff,
+  )
+);
+
+$primary: mat.define-palette($my-primary);
+$secondary: mat.define-palette($my-secondary);
+$my-theme: mat.define-light-theme((color: (primary: $primary, accent: $secondary)));
+@include mat.all-component-themes($my-theme);
